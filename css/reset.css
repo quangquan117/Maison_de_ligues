@@ -13,4 +13,7 @@ h1,h2,h3,h4,figure,p,ul{
 }
 *{
     box-sizing: border-box;
+    color: #fff;
+    text-transform: none;
+    text-decoration: none;
 }

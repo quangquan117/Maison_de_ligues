@@ -22,9 +22,11 @@ header{
     font-size: medium;
     border: solid var(--color-theme-border);
     background-color: var(--color-theme-block);
-    color: var(--color-theme-write);
     margin-bottom: 5rem;
     margin-top: 5rem;
+}
+h1{
+    color: var(--color-theme-write);
 }
 main{
     max-width: 100rem;
@@ -57,10 +59,11 @@ main nav ul{
     padding: 2rem 2rem;
     border: solid;
     text-align: center;
+    border: solid var(--color-theme-border);
     display: block;
     background-color: var(--color-theme-block);
 }
-main nav ul li{
+main nav ul li a{
     color: var(--color-theme-write);
 }
 .warning, .success{
@@ -109,4 +112,7 @@ footer{
     color: var(--color-theme-write);
     text-align: center;
     padding: 10rem;
+}
+p{
+    color: var(--color-theme-write);
 }
