@@ -1,0 +1,112 @@
+:root{
+    --color-theme-background: #101326;
+    --color-theme-block: #1A2040;
+    --color-theme-border: #2F3973;
+    --color-theme-write: #AEB2F2;
+}
+
+body{
+    background-color: var(--color-theme-background);
+}
+#img_acceuille{
+    margin: 0 0 0 50rem;
+    max-width: 5rem;
+    position: absolute;
+    
+}
+header{
+    line-height: 6rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    text-align: center;
+    font-size: medium;
+    border: solid var(--color-theme-border);
+    background-color: var(--color-theme-block);
+    color: var(--color-theme-write);
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+main{
+    max-width: 100rem;
+    margin: 0 auto;
+}
+main section h2{
+    font-size: large;
+    text-align: center;
+    color: var(--color-theme-write);
+}
+main section p{
+    border: solid var(--color-theme-border);
+    background-color: var(--color-theme-block);
+    color: var(--color-theme-write);
+    padding: 5rem 2rem;
+    margin: 0 0 2rem;
+}
+main ul{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+main ul li{
+    margin: 0.1rem 0.1rem;
+}
+main ul li img{
+    max-width: calc(100%);
+}
+main nav ul{
+    margin: 5rem auto;
+    padding: 2rem 2rem;
+    border: solid;
+    text-align: center;
+    display: block;
+    background-color: var(--color-theme-block);
+}
+main nav ul li{
+    color: var(--color-theme-write);
+}
+.warning, .success{
+    background-color: rgb(200, 0, 0);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.0rem;
+    display: none;
+    line-height: 2.5rem;
+    padding: 1rem;
+}
+.success{
+    background-color: rgb(0,200,0);
+}
+.form input, .form label, .form select{
+    display: block;
+    border-radius: 0.7rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.form input{
+    border: solid .5rem var(--color-theme-border);
+    background-color: var(--color-theme-block);
+    color: var(--color-theme-write);
+    line-height: 3.5rem;
+    padding: .5rem;
+}
+.form input[placeholder]{
+    font-size: 1.6rem;
+}
+.form select{
+    border: solid .5rem var(--color-theme-border);
+    background-color: var(--color-theme-block);
+    color: var(--color-theme-write);
+    font-size: 1.6rem;
+    line-height: 3.5rem;
+    padding: .5rem;
+}
+.form label{
+    color: var(--color-theme-write);
+}
+.form input:last-child{
+    margin-top: 5rem;
+}
+footer{
+    color: var(--color-theme-write);
+    text-align: center;
+    padding: 10rem;
+}
