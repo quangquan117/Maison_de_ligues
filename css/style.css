@@ -12,7 +12,6 @@ body{
     margin: 0 0 0 50rem;
     max-width: 5rem;
     position: absolute;
-    
 }
 header{
     line-height: 6rem;
@@ -29,7 +28,7 @@ h1{
     color: var(--color-theme-write);
 }
 main{
-    max-width: 100rem;
+    max-width: 130rem;
     margin: 0 auto;
 }
 main section h2{
@@ -49,6 +48,7 @@ main section p{
 main ul{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
 }
 main ul li{
     margin: 0.1rem 0.1rem;
