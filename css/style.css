@@ -36,6 +36,8 @@ main section h2{
     font-size: large;
     text-align: center;
     color: var(--color-theme-write);
+    font-size: 3rem;
+    margin: 2rem;
 }
 main section p{
     border: solid var(--color-theme-border);
