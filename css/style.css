@@ -14,7 +14,7 @@ body{
 }
 header{
     line-height: 6rem;
-    max-width: 80rem;
+    max-width: 100rem;
     margin: 0 auto;
     text-align: center;
     font-size: medium;
@@ -22,9 +22,14 @@ header{
     background-color: var(--color-theme-block);
     margin-bottom: 5rem;
     margin-top: 5rem;
+    display: flex;
+}
+header img{
+    max-width: 20rem;
 }
 h1{
     color: var(--color-theme-write);
+    margin: auto;
 }
 main{
     max-width: 130rem;
@@ -124,6 +129,13 @@ ul figure{
 ul figure .material-icons{
     vertical-align: -.4rem;
 }
+
+@media screen and (max-width: 75rem) {
+    header img{
+        display: none;
+    }
+}
+
 /* Overley effect */
 ul figure figcaption{
     display: grid;
