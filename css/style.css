@@ -41,6 +41,7 @@ main section p{
     border: solid var(--color-theme-border);
     background-color: var(--color-theme-block);
     color: var(--color-theme-write);
+    text-align: center;
     padding: 5rem 2rem;
     margin: 0 0 2rem;
 }
@@ -53,7 +54,7 @@ main ul li{
     margin: 0.1rem 0.1rem;
 }
 main ul li img{
-    max-width: calc(100%);
+    max-width: 100%;
 }
 main nav ul{
     margin: 5rem auto;
