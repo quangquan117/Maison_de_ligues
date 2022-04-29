@@ -1,4 +1,5 @@
 <?php
+    include_once "./src/connect.inc.php";
     include_once "./src/header.inc.php";
 ?>
 <body>
@@ -105,7 +106,7 @@
         </ul>
         <p class="warning">Warning</p>
         <div class="form" role="form">
-            <form method="get">
+            <form method="POST">
                 <label for="Nom">Nom</label>
                 <input type="nom" name="Nom" placeholder="Nom" aria-required="true">
                 <label for="Prenom">Prenom</label>
@@ -129,6 +130,21 @@
                     <option value="4">Japon</option>
                 </select>
                 <input type="submit" value="Valider">
+                <?php
+                    if (!empty($_POST['email'])){
+                        $email = $_POST['email'];
+                        var_dump($email);
+                        /* 
+                        traitement en PDO 
+                        */
+                        $q = $_bdd->prepare('INSERT INTO client (email) VALUES (:email)');
+                        $q->bindValue('email', $email); /* associe directement une valeur à un paramètre */
+                        $res = $q->execute();
+                        if ($res) {
+                            echo "<br>Inscription réussie";
+                        }
+                    }
+                ?>
             </form>
         </div>
     </main>
