@@ -1,5 +1,4 @@
 <?php
-    include_once "./src/header.inc.php";
 ?>
 <body>
     <header>

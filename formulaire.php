@@ -137,7 +137,7 @@
                         /* 
                         traitement en PDO 
                         */
-                        $q = $_bdd->prepare('INSERT INTO client (email) VALUES (:email)');
+                        $q = $_bdd->prepare('INSERT INTO CLIENT(email) VALUES(:email)');
                         $q->bindValue('email', $email); /* associe directement une valeur à un paramètre */
                         $res = $q->execute();
                         if ($res) {
