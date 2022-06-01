@@ -106,11 +106,11 @@
         </ul>
         <p class="warning">Warning</p>
         <div class="form" role="form">
-            <form method="POST">
-                <label for="Nom">Nom</label>
-                <input type="nom" name="Nom" placeholder="Nom" aria-required="true">
-                <label for="Prenom">Prenom</label>
-                <input type="prenom" name="Prenom" placeholder="Prenom" aria-required="true">
+            <form action="#"method="POST">
+                <label for="nom">Nom</label>
+                <input type="nom" name="nom" placeholder="nom" aria-required="true">
+                <label for="prenom">Prenom</label>
+                <input type="prenom" name="prenom" placeholder="prenom" aria-required="true">
                 <label for="email">E-Mail</label>
                 <input type="email" name="email" id="email" placeholder="email" aria-required="true">
                 <label for="Ville">Ville</label>
@@ -129,20 +129,15 @@
                     <option value="3">Allemagne</option>
                     <option value="4">Japon</option>
                 </select>
-                <input type="submit" value="Valider">
+                <input type="submit" value="Valider" name="submit">
                 <?php
-                    if (!empty($_POST['email'])){
+                if(isset($_POST["submit"]))
+                    if (!empty($_POST['email']) && !empty($_POST['prenom']) && !empty($_POST['nom'])){
                         $email = $_POST['email'];
-                        var_dump($email);
-                        /* 
-                        traitement en PDO 
-                        */
-                        $q = $_bdd->prepare('INSERT INTO CLIENT(email) VALUES(:email)');
-                        $q->bindValue('email', $email); /* associe directement une valeur à un paramètre */
-                        $res = $q->execute();
-                        if ($res) {
-                            echo "<br>Inscription réussie";
-                        }
+                        $prenom = $_POST['prenom'];
+                        $nom = $_POST['nom'];
+                        $q = $_bdd->prepare('INSERT INTO CLIENT(nom, prenom, email) VALUES(:nom, :prenom, :email)');
+                        $res = $q->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email));
                     }
                 ?>
             </form>

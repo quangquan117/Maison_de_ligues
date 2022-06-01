@@ -1,5 +1,5 @@
 CREATE TABLE `CLIENT` (
-  `id` INT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(50),
   `prenom` VARCHAR(50),
   `age` VARCHAR(50),
@@ -23,7 +23,7 @@ CREATE TABLE `HISTORIQUE_CLIENT` (
 */
 
 CREATE TABLE `EVENEMENT` (
-  `id` INT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(50),
   `description` VARCHAR(1000),
   `date_creation` DATE,
