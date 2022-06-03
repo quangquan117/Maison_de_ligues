@@ -113,31 +113,23 @@
                 <input type="prenom" name="prenom" placeholder="prenom" aria-required="true">
                 <label for="email">E-Mail</label>
                 <input type="email" name="email" id="email" placeholder="email" aria-required="true">
-                <label for="Ville">Ville</label>
-                <select id="Ville">
-                    <option value="">--choose our city--</option>>
-                    <option value="1">Paris</option>
-                    <option value="2">Londre</option>
-                    <option value="3">Berlin</option>
-                    <option value="4">Tokyo</option>
-                </select>
-                <label for="Pays">Pays</label>
-                <select id="Pays">
-                    <option value="">--choose our country--</option>>
-                    <option value="1">France</option>
-                    <option value="2">Angletaire</option>
-                    <option value="3">Allemagne</option>
-                    <option value="4">Japon</option>
-                </select>
+                <label for="password">mots de passe</label>
+                <input id="password" name="password" type="password" placeholder="password" aria-require="true">
+                <label for="c_password">confirmé votre mot de passe</label>
+                <input id="c_password" name="c_password" type="password" placeholder="confirmé votre mot de passe" aria-require="true">
                 <input type="submit" value="Valider" name="submit">
                 <?php
                 if(isset($_POST["submit"]))
-                    if (!empty($_POST['email']) && !empty($_POST['prenom']) && !empty($_POST['nom'])){
+                    if (!empty($_POST['email']) && !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty('password') && !empty('c_password')){
                         $email = $_POST['email'];
                         $prenom = $_POST['prenom'];
                         $nom = $_POST['nom'];
-                        $q = $_bdd->prepare('INSERT INTO CLIENT(nom, prenom, email) VALUES(:nom, :prenom, :email)');
-                        $res = $q->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email));
+                        $password = $_POST['password'];
+                        $c_password = $_POST['c_password'];
+                        if (strcmp($password, $c_password) == 0) {
+                            $q = $_bdd->prepare('INSERT INTO CLIENT(nom, prenom, email) VALUES(:nom, :prenom, :email)');
+                            $res = $q->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email));
+                        }
                     }
                 ?>
             </form>
