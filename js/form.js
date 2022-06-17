@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded",()=>{
     console.log("here");
-    let input = document.getElementsByTagName("input")[3];
+    let input = document.getElementsByTagName("input")[4];
     let traitement;
     let warning = document.querySelector(".warning");
 
