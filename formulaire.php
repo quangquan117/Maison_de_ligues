@@ -127,8 +127,12 @@
                         $password = $_POST['password'];
                         $c_password = $_POST['c_password'];
                         if (strcmp($password, $c_password) == 0) {
-                            $q = $_bdd->prepare('INSERT INTO CLIENT(nom, prenom, email, password) VALUES(:nom, :prenom, :email, :password)');
-                            $res = $q->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'password' => $password));
+                            $q = $_bdd->prepare('INSERT INTO CLIENT(nom, prenom, email, password) VALUES(?, ?, ?, ?)');
+                            $q->execute(array(
+                                htmlentities($nom),
+                                htmlentities($prenom),
+                                htmlentities($email),
+                                htmlentities($password)));
                         }
                     }
                 ?>
