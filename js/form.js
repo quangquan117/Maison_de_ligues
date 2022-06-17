@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         else{
             warning.style.display="block";
             warning.classList.add("success");
+            warning.textContent ="Votre inscription est reussie"
             sessionStorage.setItem("prenom", User.nom);
             localStorage.setItem("nom", User.prenom);
             localStorage.setItem("email", User.email);
