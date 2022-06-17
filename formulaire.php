@@ -127,8 +127,8 @@
                         $password = $_POST['password'];
                         $c_password = $_POST['c_password'];
                         if (strcmp($password, $c_password) == 0) {
-                            $q = $_bdd->prepare('INSERT INTO CLIENT(nom, prenom, email, password, c_password) VALUES(:nom, :prenom, :email, :password, :c_password)');
-                            $res = $q->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'password' => $password, 'c_password' ));
+                            $q = $_bdd->prepare('INSERT INTO CLIENT(nom, prenom, email, password) VALUES(:nom, :prenom, :email, :password)');
+                            $res = $q->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'password' => $password));
                         }
                     }
                 ?>
