@@ -113,22 +113,18 @@
                 <input type="prenom" name="prenom" placeholder="prenom" aria-required="true">
                 <label for="email">E-Mail</label>
                 <input type="email" name="email" id="email" placeholder="email" aria-required="true">
-                <label for="password">mots de passe</label>
-                <input id="password" name="password" type="password" placeholder="password" aria-require="true">
+                <label for="password">password</label>
+                <input type="password" name="password" placeholder="password" aria-required="true">
                 <input type="submit" value="Valider" name="submit">
                 <?php
                 if(isset($_POST["submit"]))
-                    if (!empty($_POST['email']) && !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty('password') && !empty('c_password')){
+                    if (!empty($_POST['email']) && !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['password'])){
                         $email = $_POST['email'];
                         $prenom = $_POST['prenom'];
                         $nom = $_POST['nom'];
                         $password = $_POST['password'];
-                            $q = $_bdd->prepare('INSERT INTO CLIENT(nom, prenom, email, password) VALUES(?, ?, ?, ?)');
-                            $q->execute(array(
-                                htmlentities($nom),
-                                htmlentities($prenom),
-                                htmlentities($email),
-                                htmlentities($password)));
+                        $q = $_bdd->prepare('INSERT INTO CLIENT(nom, prenom, email, password) VALUES(:nom, :prenom, :email, :password)');
+                        $res = $q->execute(array('nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'password' => $password));
                     }
                 ?>
             </form>
