@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             email:document.getElementsByTagName("input")[2].value,
             password:document.getElementsByTagName("input")[3].value
         }
-        if (!User.nom || !User.prenom || !User.email || User.password){
+        if (!User.nom || !User.prenom || !User.email || !User.password){
             warning.style.display="block";
             warning.classList.add("warning")
             warning.classList.remove("success")
